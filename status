@@ -1,0 +1,19 @@
+var rpc = require("discord-rpc")
+const client = new rpc.Client({ transport: 'ipc' })
+client.on('ready', () => {
+   
+
+
+client.request('SET_ACTIVITY', {
+pid: process.pid,
+activity : {
+details : " ",
+assets : {
+large_image : " ",
+large_text : " " 
+},
+buttons : [{label : "BOTAO1" , url : "LINK"},{label : "BOTAO2", url: "LINK"}]
+}
+})
+})
+client.login({ clientId : "728059178727243846 " }).catch(console.error); 
